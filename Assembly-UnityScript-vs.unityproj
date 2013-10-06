@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{9A5C841C-76A0-192D-FE2B-62FF34273354}</ProjectGuid>
+	<ProjectGuid>{274520FE-A25D-B7C6-3456-D6E02EEAC328}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\FixedJoint.js" />
      <Compile Include="Assets\Scripts\Game.js" />
      <Compile Include="Assets\Scripts\Gravity.js" />
+     <Compile Include="Assets\Scripts\Hull.js" />
      <Compile Include="Assets\Scripts\Ship.js" />
      <Compile Include="Assets\Scripts\Sun.js" />
      <Compile Include="Assets\Scripts\camera.js" />
@@ -57,7 +58,6 @@
      <Compile Include="Assets\Scripts\visibility.js" />
      <None Include="Assets\Nobiax Free Rocks\Nobiax Free Rocks.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

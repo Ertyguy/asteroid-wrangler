@@ -1,11 +1,12 @@
 #pragma strict
 
 
-var explosion : GameObject;
 private var asteroids;
+private var game:Game;
 
 function Start () {
 	asteroids = LayerMask.NameToLayer("Asteroid");
+	game = GameObject.Find("GUI Hud").GetComponent(Game);
 }
 
 function Update () {
@@ -14,13 +15,18 @@ function Update () {
 
 
 function OnTriggerEnter(target: Collider){
-	
+	Debug.Log(target.gameObject.tag);
 	if(target.gameObject.layer == asteroids){
-		var explosion: GameObject = Instantiate(explosion, target.gameObject.transform.position, target.gameObject.transform.rotation);
-		Destroy(explosion,1.5);
+		
+		game.createExplosion(target.gameObject);
 		
 		var rock = target.gameObject.tag == "Asteroid" ? target.gameObject : target.transform.parent.gameObject;
 		Destroy(rock);
 
 	}
+	if(target.gameObject.tag == "Ship"){
+		game.killHealth();
+		game.createExplosion(target.gameObject);
+	}
 }
+

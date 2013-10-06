@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{9A5C841C-76A0-192D-FE2B-62FF34273354}</ProjectGuid>
+	<ProjectGuid>{274520FE-A25D-B7C6-3456-D6E02EEAC328}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\FixedJoint.js" />
      <Compile Include="Assets\Scripts\Game.js" />
      <Compile Include="Assets\Scripts\Gravity.js" />
+     <Compile Include="Assets\Scripts\Hull.js" />
      <Compile Include="Assets\Scripts\Ship.js" />
      <Compile Include="Assets\Scripts\Sun.js" />
      <Compile Include="Assets\Scripts\camera.js" />
@@ -57,11 +58,10 @@
      <Compile Include="Assets\Scripts\visibility.js" />
      <None Include="Assets\Nobiax Free Rocks\Nobiax Free Rocks.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{E11D43AD-1A1F-E1D1-82B5-2C357D780157}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{09B07DAB-95BA-4F85-55F5-ED2FAE55F1D8}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

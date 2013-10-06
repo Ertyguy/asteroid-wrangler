@@ -84,16 +84,10 @@ function Update ()
 
 function OnTriggerStay (trigger : Collider) 
 {
-	if(!threw && !hold && shoot > 0 && !trigger.gameObject.GetComponent(FixedJoint))
+	if(!threw && !hold && shoot > 0 )
 	{
 		//set holding GO to trigger or parent
-		holding = trigger.gameObject.tag == "Asteroid" ? trigger.gameObject : trigger.transform.parent.gameObject;
-		
-		//var joint: HingeJoint = holding.AddComponent(HingeJoint); //add fixed joint to 'trigger'
-		//joint.connectedBody = GameObject.Find("ship").rigidbody;
-		//joint.useSpring = true;
-		//holding.rigidbody.mass = hold_mass;
-		
+		holding = trigger.gameObject.tag == "Asteroid" ? trigger.gameObject : trigger.transform.parent.gameObject;		
 		
 		ast = holding.gameObject.GetComponent(Asteroid);
 		ast.Held(this.gameObject);
@@ -108,8 +102,7 @@ function RemoveJoint()
 {
 	ast.LetGo();
 	holding.rigidbody.mass = 1;
-	//var joint: HingeJoint = holding.GetComponent(HingeJoint);
-	//Destroy(joint);
+
 	//Debug.Log("destroy joint");
 }
 

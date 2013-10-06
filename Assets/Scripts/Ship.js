@@ -15,6 +15,8 @@ private var j_d_vis  : visibility;
 private var j_fr_vis : visibility;
 private var j_fl_vis : visibility;
 
+
+	
 function Start () 
 {
 	//Get Jet js files
@@ -24,6 +26,8 @@ function Start ()
 	j_d_vis  =  jet_d.GetComponent(visibility);
  	j_fl_vis = jet_fl.GetComponent(visibility);
 	j_fr_vis = jet_fr.GetComponent(visibility);
+	
+
 }
 
 function Update () 
@@ -67,3 +71,5 @@ function Update ()
 	}
 
 }
+
+
