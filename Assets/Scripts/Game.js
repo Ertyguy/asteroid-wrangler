@@ -4,7 +4,7 @@ var asteroids: GameObject;
 var guiasteroidcount: GUIText;
 var guihealthtic: GUITexture;
 
-var ship: GameObject;
+var shipGO: GameObject;
 var energyempty: Texture2D;
 var explosion : GameObject;
 
@@ -15,8 +15,27 @@ var maxHealth:int = 4;
 private var healthXOffset = 6;
 private var asteroidcount: int;
 
+var shipT: Transform;
+private var controlsjs: controls;
+private var shipjs: Ship;
+
+var style:GUIStyle;
+var state: GameState = GameState.Title;
+
+enum GameState 
+{
+	Title,
+	Game,
+	Restart,
+}
+
+
+
 function Start () 
 {
+	controlsjs = shipT.GetComponent(controls);
+	shipjs = shipT.GetComponent(Ship);
+
 	asteroidcount = 0;
 	setAsteroidCount();
 	
@@ -72,8 +91,9 @@ function killHealth()
 {
 	health = 0;
 	setHealth(health);
-	createExplosion(ship);
-	Destroy(ship,.2);
+	createExplosion(shipGO);
+	Destroy(shipGO,.2);
+	state = GameState.Restart;
 }
 
 
@@ -82,4 +102,38 @@ function createExplosion(target: GameObject)
 	Debug.Log("destroy");
 	var explosion: GameObject = Instantiate(explosion, target.transform.position, target.transform.rotation);
 	Destroy(explosion,1.5);
+}
+
+function OnGUI()
+{
+	//var style = new GUIStyle();
+	//style.normal.textColor = GUI.skin.label.normal.textColor;
+	//style.fontSize = 40;
+	//style.
+ 	//GUI.skin.label.font = new Font();
+ 	if(state == GameState.Title)
+ 	{
+ 		GUI.BeginGroup (new Rect (Screen.width / 3, Screen.height / 4, Screen.width/2, Screen.height/2));
+ 		
+ 		GUI.Label (Rect (0, 0, 150, 20), "Asteroid Wranlger", style);
+ 		//makes a GUI start button
+	    if(GUI.Button (Rect (50, 80, 150, 20), "< Start >", style))
+	    {
+	       //Load a level
+	      state = GameState.Game;
+	      controlsjs.enable = true;
+	      shipjs.enable = true;
+	    }
+	    GUI.EndGroup();
+ 	}
+ 	if(state == GameState.Restart)
+ 	{
+	    //makes a GUI reset button
+	    if(GUI.Button (Rect (Screen.width/2 - 50, Screen.height/2 + 10, 100, 50), "< Restart >", style))
+	    {
+	       //Loads a level
+	      Application.LoadLevel(0);
+	    }
+    }
+
 }

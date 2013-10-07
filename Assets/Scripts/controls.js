@@ -8,13 +8,14 @@ var alt_turnspeed = 90.0;
 var speed = 60.0;
 var rollSpeed = 30.0;
 
-private var trueSpeed = 0.0;
+var trueSpeed = 0.0;
 private var trueTurn = turnspeed;
 
-
+var enable: boolean = false;
 
 function Update () {
-
+	if(!enable) return;
+	
 	var roll = Input.GetAxis("Roll");
 	var pitch = Input.GetAxis("Pitch");
 	var yaw = Input.GetAxis("Yaw");

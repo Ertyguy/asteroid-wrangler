@@ -15,7 +15,7 @@ private var j_d_vis  : visibility;
 private var j_fr_vis : visibility;
 private var j_fl_vis : visibility;
 
-
+var enable: boolean = false;
 	
 function Start () 
 {
@@ -32,6 +32,8 @@ function Start ()
 
 function Update () 
 {
+
+	
 	//Hide by default
 	j_u_vis.Hide();
 	j_d_vis.Hide();
@@ -41,7 +43,8 @@ function Update ()
 	j_fl_vis.Hide();
 	j_fr_vis.Hide(); 
 	
-
+	if(!enable) return;
+	
 	var yaw = Input.GetAxis("Yaw"); 
 	var power = Input.GetAxis("Power");
 	var pitch = Input.GetAxis("Pitch");

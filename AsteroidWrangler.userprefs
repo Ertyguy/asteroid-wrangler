@@ -1,6 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\controls.js">
+    <Files>
+      <File FileName="Assets\Scripts\Game.js" Line="122" Column="23" />
+      <File FileName="Assets\Scripts\Beam.js" Line="24" Column="6" />
+      <File FileName="Assets\Scripts\Sun.js" Line="33" Column="1" />
+      <File FileName="Assets\Scripts\Ship.js" Line="4" Column="10" />
+      <File FileName="Assets\Scripts\Hull.js" Line="33" Column="22" />
+      <File FileName="Assets\Scripts\controls.js" Line="46" Column="2" />
+      <File FileName="Assets\Scripts\Asteroid.js" Line="28" Column="35" />
+      <File FileName="Assets\Scripts\camera.js" Line="24" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
